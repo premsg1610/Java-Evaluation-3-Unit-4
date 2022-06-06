@@ -6,14 +6,28 @@ public class Loan {
 		
 		if(employeeObj instanceof PermanentEmployee)
 		{
-			double loan = PermanentEmployee.salary * (15/100);
+			double loan = employeeObj.getSalary() * (15/100);
+			return loan;
 		}
+		else if(employeeObj instanceof TemporaryEmployee)
+		{
+			double loan = employeeObj.getSalary() * (10/100);
+			return loan;
+		}
+		return 0.00;
 		
 	}
 	
 
 	private Loan() {
 		
+	}
+	
+	public static Loan getloanObj() {
+		
+		Loan loan = new Loan();
+		
+		return loan;
 	}
 	
 	
